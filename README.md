@@ -1,112 +1,40 @@
-# 📦 Social Media Downloader Bot - Complete Package
+# Social Media Downloader Bot - README
 
-## 📁 All Files Included:
-
-### **Main Bot Files:**
-1. **bot_stable.py** ⭐ (RECOMMENDED)
-   - Most stable version
-   - SOCKS5 proxy support
-   - Custom Pinterest downloader
-   - Progress updates
-   - Auto-reconnect
-   - ffmpeg check
-   - 20KB
-
-2. **bot.py** (Advanced)
-   - Full-featured version
-   - Carousel/slideshow support
-   - Advanced optimizations
-   - More complex
-   - 28KB
-
-### **Setup Files:**
-3. **requirements.txt**
-   - Python packages needed
-   - pyTelegramBotAPI
-   - yt-dlp
-
-4. **requirements_simple.txt**
-   - Minimal requirements
-   - For bot_stable.py
-
-5. **proxies.txt**
-   - Add your SOCKS5 proxies here
-   - Supports multiple formats
-   - Auto-converts
-
-### **Documentation:**
-
-#### **Quick Start:**
-6. **SIMPLE_SETUP.md** ⭐ START HERE!
-   - 3-step setup guide
-   - For beginners
-   - 2KB
-
-7. **QUICKSTART.md**
-   - User guide
-   - How to use the bot
-   - 3KB
-
-#### **Features:**
-8. **PROXY_SETUP.md**
-   - SOCKS5 proxy configuration
-   - Where to buy proxies
-   - Testing proxies
-   - 6KB
-
-9. **PINTEREST_CUSTOM.md**
-   - Custom Pinterest downloader
-   - How it works
-   - Troubleshooting
-   - 6KB
-
-10. **AUTO_CLEANUP.md**
-    - Auto-delete files after 2 min
-    - Storage management
-    - 6KB
-
-11. **CAROUSEL_SUPPORT.md**
-    - Multi-image posts
-    - Instagram/Facebook carousels
-    - TikTok slideshows
-    - 7KB
-
-12. **SPEED_OPTIMIZATION.md**
-    - Performance tips
-    - Format selection
-    - Bottleneck analysis
-    - 5KB
-
-#### **Main Documentation:**
-13. **README.md**
-    - Complete setup guide
-    - All features explained
-    - Troubleshooting
-    - 8KB
-
-14. **.gitignore**
-    - Git ignore rules
-    - Keeps secrets safe
+**Developer:** Younes Sedki  
+**GitHub:** https://github.com/younes-sedki/  
+**Portfolio:** https://sedkiy.dev
 
 ---
 
-## 🚀 Quick Start (3 Steps):
+## What This Bot Does
+
+Downloads videos and audio from 7 social media platforms directly to Telegram.
+
+---
+
+## Supported Platforms
+
+1. YouTube (youtube.com, youtu.be)
+2. Instagram (instagram.com)
+3. TikTok (tiktok.com, vm.tiktok.com, vt.tiktok.com)
+4. Twitter/X (twitter.com, x.com)
+5. Facebook (facebook.com, fb.watch)
+6. Reddit (reddit.com)
+7. Pinterest (pinterest.com, pin.it) - Custom downloader
+
+---
+
+## Quick Setup
 
 ### 1. Install Requirements
 ```bash
 pip install pyTelegramBotAPI yt-dlp requests PySocks
 ```
 
-### 2. Configure Bot
-Edit `bot_stable.py`:
+### 2. Configure
+Edit `bot_stable.py` line 12:
 ```python
-BOT_TOKEN = "your_telegram_bot_token"
-USE_PROXY = True  # If you have proxies
-```
-
-Add proxies to `proxies.txt`:
-```
-123.45.67.89:1080:username:password
+BOT_TOKEN = "your_telegram_bot_token_here"
 ```
 
 ### 3. Run
@@ -114,157 +42,320 @@ Add proxies to `proxies.txt`:
 python bot_stable.py
 ```
 
-**Done!** ✅
+---
+
+## How to Use
+
+### Download Video
+Send any link:
+```
+https://youtube.com/watch?v=xxx
+```
+
+### Download Audio
+Add "audio" or "mp3" to your message:
+```
+https://youtube.com/watch?v=xxx audio
+```
+
+### Commands
+- `/start` - Welcome message
+- `/help` - Usage instructions
 
 ---
 
-## 📊 File Sizes:
-- **bot_stable.py**: 20KB (recommended)
-- **bot.py**: 28KB (advanced)
-- **Total docs**: ~50KB
-- **Complete package**: ~80KB
+## Features
+
+✅ **Progress Updates** - Shows download percentage and file size
+✅ **Auto-Cleanup** - Files deleted after 2 minutes
+✅ **SOCKS5 Proxies** - Random rotation for each download
+✅ **Auto-Reconnect** - Never crashes on connection errors
+✅ **Retry Logic** - 3 automatic retry attempts
+✅ **Large File Warning** - Alerts for files >20MB
+✅ **Custom Pinterest** - Works when yt-dlp is blocked
 
 ---
 
-## ✨ Features:
+## Proxy Setup (Optional)
 
-### **Platforms (9):**
-✅ YouTube
-✅ Instagram (+ carousels)
-✅ TikTok
-✅ Twitter/X
-✅ Facebook
-✅ Reddit
-✅ Pinterest (custom downloader)
-✅ Vimeo
-✅ SoundCloud
+### Enable Proxies
+Line 16:
+```python
+USE_PROXY = True
+```
 
-### **Core Features:**
-✅ Video downloads
-✅ Audio extraction (MP3)
-✅ Progress updates
-✅ File size display
-✅ Auto-cleanup (2 min)
-✅ SOCKS5 proxy support
-✅ Auto-reconnect
-✅ Retry logic
-✅ Error handling
+### Add Proxies
 
-### **Advanced (bot.py):**
-✅ Carousel support
-✅ Media groups
-✅ Speed optimizations
-✅ Advanced formats
+**Method 1: In Code** (lines 17-26)
+```python
+PROXY_LIST = [
+    "142.111.48.253:7030:username:password",
+    "23.95.150.145:6114:username:password",
+]
+```
+
+**Method 2: In File** (proxies.txt)
+```
+142.111.48.253:7030:username:password
+23.95.150.145:6114:username:password
+```
+
+Both formats work:
+- `ip:port:username:password`
+- `socks5://username:password@ip:port`
 
 ---
 
-## 🎯 Which Bot to Use?
+## Configuration
 
-### **Use bot_stable.py if:**
-- ✅ You want reliability
-- ✅ You're a beginner
-- ✅ You need proxies
-- ✅ You want simple setup
+### Settings (at top of file)
 
-### **Use bot.py if:**
-- ✅ You need carousels
-- ✅ You want all features
-- ✅ You're experienced
-- ✅ You can debug issues
-
-**Recommendation: Start with bot_stable.py** ⭐
-
----
-
-## 📚 Documentation Guide:
-
-**Start here:**
-1. Read **SIMPLE_SETUP.md**
-2. Run bot_stable.py
-3. Test with a YouTube link
-
-**Add features:**
-4. Read **PROXY_SETUP.md** (for proxies)
-5. Read **PINTEREST_CUSTOM.md** (for Pinterest)
-
-**Optimize:**
-6. Read **SPEED_OPTIMIZATION.md**
-7. Read **AUTO_CLEANUP.md**
-
-**Advanced:**
-8. Read **CAROUSEL_SUPPORT.md**
-9. Switch to bot.py
-
----
-
-## 🔧 Requirements:
-
-### **Required:**
-- Python 3.8+
-- pyTelegramBotAPI
-- yt-dlp
-- requests
-
-### **Optional:**
-- PySocks (for SOCKS5 proxies)
-- ffmpeg (for audio conversion)
-
----
-
-## 💡 Pro Tips:
-
-1. **Always use bot_stable.py first**
-2. **Install ffmpeg for audio**
-3. **Use proxies for Pinterest**
-4. **Read SIMPLE_SETUP.md**
-5. **Test with YouTube before other platforms**
-
----
-
-## 🆘 Support:
-
-**Common Issues:**
-- Audio not working → Install ffmpeg
-- Pinterest failing → Add proxies
-- Connection errors → Auto-reconnects
-- File too large → Try audio format
-
-**Check documentation:**
-- Each .md file has troubleshooting
-- README.md has full guide
-- SIMPLE_SETUP.md for quick fixes
-
----
-
-## 📦 Package Contents Summary:
-
-**Files: 14**
-- Python code: 2
-- Config: 3
-- Documentation: 8
-- Meta: 1
-
-**Total size: ~80KB**
-**Lines of code: ~600** (bot_stable.py)
-
----
-
-## ✅ Checklist:
-
-Before running:
-- [ ] Installed Python packages
-- [ ] Got Telegram bot token
-- [ ] Configured bot_stable.py
-- [ ] (Optional) Added proxies
-- [ ] (Optional) Installed ffmpeg
-
-Ready to run:
-```bash
-python bot_stable.py
+```python
+BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"  # Line 12
+USE_PROXY = False                       # Line 16
+CLEANUP_DELAY = 120                     # Line 87 (2 minutes)
+DOWNLOAD_DIR = "downloads"              # Line 83
 ```
 
 ---
 
-**Everything you need is in this folder!** 🎉
+## User Experience
 
-Happy downloading! 📥
+### Download Process
+```
+User sends: https://youtube.com/watch?v=xxx
+
+Bot shows:
+📹 Downloading from youtube...
+⬇️ Downloading: 45% (5.2MB / 11.5MB)
+⬇️ Downloading: 78% (9.0MB / 11.5MB)
+📤 Uploading (11.5MB)...
+[Video sent]
+```
+
+### Audio Download
+```
+User sends: https://youtube.com/watch?v=xxx audio
+
+Bot shows:
+🎵 Downloading from youtube...
+📤 Uploading (3.2MB)...
+[MP3 sent]
+```
+
+---
+
+## Startup Banner
+
+```
+============================================================
+🤖 Social Media Downloader Bot
+============================================================
+👨‍💻 Developer: Younes Sedki
+🔗 GitHub: https://github.com/younes-sedki/
+🌐 Portfolio: https://sedkiy.dev
+============================================================
+
+📁 Download folder: downloads
+🗑️  Auto-cleanup: 2 minutes
+✅ Platforms: youtube, instagram, tiktok, twitter, facebook, reddit, pinterest
+🔒 Proxy: ENABLED (10 proxies loaded)
+
+🔄 Updating yt-dlp...
+✅ yt-dlp updated!
+
+============================================================
+🚀 Bot is ready! Send links to download.
+============================================================
+
+🔄 Starting bot polling...
+```
+
+---
+
+## Requirements
+
+### Python Packages
+- `pyTelegramBotAPI` - Telegram bot framework
+- `yt-dlp` - Video downloader
+- `requests` - HTTP library
+- `PySocks` - SOCKS proxy support (optional)
+
+### System
+- Python 3.8+
+- `ffmpeg` (for audio conversion)
+
+### Install ffmpeg
+```bash
+# Windows
+choco install ffmpeg
+
+# Linux
+sudo apt install ffmpeg
+
+# Mac
+brew install ffmpeg
+```
+
+---
+
+## Error Messages
+
+### Audio Without ffmpeg
+```
+❌ Audio conversion not available
+
+ffmpeg is not installed.
+
+Install it:
+• Windows: choco install ffmpeg
+• Linux: sudo apt install ffmpeg
+• Mac: brew install ffmpeg
+
+Or send the link without 'audio' to get the video.
+```
+
+### File Too Large
+```
+❌ File too large (65.2MB)
+Telegram limit is 50MB.
+Try: [link] audio
+```
+
+### Connection Error
+```
+⚠️  Connection error: Remote end closed connection
+🔄 Reconnecting in 5 seconds...
+```
+
+---
+
+## How It Works
+
+### 1. Platform Detection
+Bot detects which platform from URL
+
+### 2. Downloader Selection
+- Pinterest → Custom downloader
+- Others → yt-dlp
+
+### 3. Proxy Selection (if enabled)
+Random proxy from your list
+
+### 4. Download
+Shows progress updates every 2 seconds
+
+### 5. Upload to Telegram
+3 retry attempts with 5-minute timeout
+
+### 6. Cleanup
+File deleted after 2 minutes
+
+---
+
+## Pinterest Special Features
+
+Pinterest blocks yt-dlp, so this bot has a custom downloader that:
+
+1. Follows redirects (pin.it → pinterest.com)
+2. Extracts video URL from HTML
+3. Downloads with SOCKS5 proxy
+4. Shows progress updates
+
+Works with both:
+- `https://pinterest.com/pin/123456789/`
+- `https://pin.it/abc123`
+
+---
+
+## Technical Details
+
+### Code Structure
+- **Lines 1-101:** Configuration and utilities
+- **Lines 103-230:** Custom Pinterest downloader
+- **Lines 232-342:** yt-dlp integration
+- **Lines 344-540:** Bot handlers
+- **Lines 542-587:** Startup and main loop
+
+### Proxy System
+- Auto-converts formats
+- Random rotation
+- Works with Pinterest and yt-dlp
+- Loads from file or code
+
+### Auto-Cleanup
+- Background threads
+- 2-minute delay
+- Prevents disk waste
+- Safe deletion
+
+### Auto-Reconnect
+- Infinite loop
+- 5-second retry
+- Never exits on error
+
+---
+
+## Troubleshooting
+
+### Bot Not Responding
+Check bot token is correct
+
+### Downloads Fail
+Update yt-dlp:
+```bash
+pip install -U yt-dlp
+```
+
+### Pinterest Not Working
+Enable proxies (required for Pinterest)
+
+### Audio Fails
+Install ffmpeg
+
+### Proxy Errors
+Test proxies first, use residential proxies for best results
+
+---
+
+## Performance
+
+### Download Speed
+- YouTube: 5-15 seconds
+- TikTok: 3-8 seconds
+- Instagram: 5-10 seconds
+- Pinterest: 8-15 seconds (with proxy)
+
+### Upload Speed
+- Small (<10MB): 5-10 seconds
+- Medium (10-30MB): 15-45 seconds
+- Large (30-50MB): 45-90 seconds
+
+### Storage
+- Without cleanup: 10-100GB/month
+- With 2-min cleanup: 100-500MB
+
+---
+
+## Credits
+
+**Developer:** Younes Sedki  
+**GitHub:** https://github.com/younes-sedki/  
+**Portfolio:** https://sedkiy.dev
+
+**Built with:**
+- pyTelegramBotAPI
+- yt-dlp
+- requests
+- Python
+
+---
+
+## License
+
+Personal and educational use.  
+Keep credits when using.
+
+---
+
+**Ready to download!** 🚀
