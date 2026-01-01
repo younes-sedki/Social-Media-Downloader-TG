@@ -1,0 +1,11 @@
+# SOCKS5 Proxies
+# Supports TWO formats - bot auto-converts!
+
+# Format 1 (Standard): socks5://username:password@ip:port
+# socks5://username:password@123.45.67.89:1080
+
+# Format 2 (Simple): ip:port:username:password
+# 123.45.67.89:1080:username:password
+
+# Both formats work! Add your proxies below:
+
