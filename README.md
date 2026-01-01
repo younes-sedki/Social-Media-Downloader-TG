@@ -259,7 +259,7 @@ Pinterest blocks yt-dlp, so this bot has a custom downloader that:
 
 1. Follows redirects (pin.it → pinterest.com)
 2. Extracts video URL from HTML
-3. Downloads with SOCKS5 proxy
+3. Downloads with SOCKS5 proxy (   YOU CAN TAKE 10 PROXIES FROM [webshare.io](https://webshare.io/) FOR TEST   )
 4. Shows progress updates
 
 Works with both:
